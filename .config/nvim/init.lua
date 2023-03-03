@@ -8,10 +8,10 @@ vim.g.localleader = "\\"
 
 
 -- Importing modules
+require("plug")		-- plugins
 require("vars")		-- variables
 require("opts")		-- options
 require("keys")		-- keymaps
-require("plug")		-- plugins
 
 -- Plugins
 require('nvim-tree').setup{}
