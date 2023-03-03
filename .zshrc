@@ -7,18 +7,17 @@ zstyle ':omz:update' frequency 14
 # Agnoster is the best
 ZSH_THEME="agnoster"
 
-
 export ZSH="$HOME/.oh-my-zsh"
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# Use nano for ssh session and micro for local
+# Use nano for ssh session and neovim for local session
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nano'
 else
-  export EDITOR='micro'
+  export EDITOR='nvim'
 fi
 
 # Aliases
@@ -27,13 +26,16 @@ alias gcm="git commit -m"
 alias gc="git commit"
 alias gf="git fetch"
 
-alias cls="clear && ls"
+alias cls="clear && ls -la"
+
+alias vi="neovim"
+alias vim="neovim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# Styling my auto-suggestions
+# Styling my auto-suggestions (Bold green)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#15db68,bold"
 
 # Try to find first suggestion from my ZSH_HISTORY
