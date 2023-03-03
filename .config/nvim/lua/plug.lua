@@ -37,6 +37,17 @@ return require("packer").startup(function(use)
 	-- Gruvbox is a retro lookin' theme
 	use { "ellisonleao/gruvbox.nvim" }
 
+
+	-- Package manager (LSP, Linters...)
+	use {
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+	}
+
+	-- Rust tools
+	use 'simrat39/rust-tools.nvim'
+
 	-- Automatically set up your configuration after cloning packer.nvim
   	-- Put this at the end after all plugins
   	if packer_bootstrap then
