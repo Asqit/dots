@@ -1,4 +1,6 @@
---> plug.lua
+--------------------------------------------------------------
+--					 lua/core/plug.lua
+--------------------------------------------------------------
 
 local ensure_packer = function()
   local fn = vim.fn
@@ -14,6 +16,8 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
+	-- Manage packer itself
+	use 'wbthomason/packer.nvim'
 
 	-- File tree
 	use {
@@ -27,16 +31,14 @@ return require("packer").startup(function(use)
 	-- Nice looking status bar
 	use {
 		'nvim-lualine/lualine.nvim',
-		 requires = { 
-			 'kyazdani42/nvim-web-devicons', 
-			 opt = true 
+		 requires = {
+			 'kyazdani42/nvim-web-devicons',
+			 opt = true
 		 }
 	 }
 
-
 	-- Gruvbox is a retro lookin' theme
 	use { "ellisonleao/gruvbox.nvim" }
-
 
 	-- Package manager (LSP, Linters...)
 	use {
@@ -45,12 +47,25 @@ return require("packer").startup(function(use)
 		"neovim/nvim-lspconfig",
 	}
 
-	-- Rust tools
-	use 'simrat39/rust-tools.nvim'
+	-- Fuzzy finder
+	use {
+		'nvim-telescope/telescope.nvim', 
+		tag = '0.1.1',
+		requires = { {'nvim-lua/plenary.nvim'} }
+	}
 
-	-- Automatically set up your configuration after cloning packer.nvim
-  	-- Put this at the end after all plugins
-  	if packer_bootstrap then
-    		require('packer').sync()
+	-- Code completion
+	use	"hrsh7th/nvim-cmp"
+	use	"hrsh7th/cmp-nvim-lsp"
+
+	-- Code snippets
+	use "L3MON4D3/LuaSnip"
+
+	-- Better code snippets
+	use "saadparwaiz1/cmp_luasnip"
+	use "rafamadriz/friendly-snippets"
+	
+	if packer_bootstrap then
+    	require('packer').sync()
   	end
 end)
