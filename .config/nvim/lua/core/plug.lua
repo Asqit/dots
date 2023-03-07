@@ -49,21 +49,13 @@ return require("packer").startup(function(use)
 
 	-- Fuzzy finder
 	use {
-		'nvim-telescope/telescope.nvim', 
+		'nvim-telescope/telescope.nvim',
 		tag = '0.1.1',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
 	-- Code completion
-	use	"hrsh7th/nvim-cmp"
-	use	"hrsh7th/cmp-nvim-lsp"
-
-	-- Code snippets
-	use "L3MON4D3/LuaSnip"
-
-	-- Better code snippets
-	use "saadparwaiz1/cmp_luasnip"
-	use "rafamadriz/friendly-snippets"
+	use {'neoclide/coc.nvim', branch = 'release'}
 	
 	if packer_bootstrap then
     	require('packer').sync()

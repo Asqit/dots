@@ -12,6 +12,11 @@ opt.scrolloff = 4			-- int:  Min num. lines of context
 opt.signcolumn = "yes"		-- str:  Show the sign column
 opt.mouse = "a"				-- str:  Enable mouse support (All modes)
 
+--> General
+opt.updatetime = 300		-- int:	The length of time vim waits after we stop typing 
+opt.backup = false          
+opt.writebackup = false
+
 --> Filetypes
 opt.encoding = "utf8"		-- str: String encoding to use (ASCII, UTF-16...)
 opt.fileencoding = "utf8"	-- str: File endcoding to use
