@@ -27,7 +27,6 @@ return require("packer").startup(function(use)
 		},
 	}
 
-
 	-- Nice looking status bar
 	use {
 		'nvim-lualine/lualine.nvim',
@@ -40,12 +39,8 @@ return require("packer").startup(function(use)
 	-- Gruvbox is a retro lookin' theme
 	use { "ellisonleao/gruvbox.nvim" }
 
-	-- Package manager (LSP, Linters...)
-	use {
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
-	}
+	-- LSP
+	use {"neovim/nvim-lspconfig"}
 
 	-- Fuzzy finder
 	use {
@@ -56,7 +51,17 @@ return require("packer").startup(function(use)
 
 	-- Code completion
 	use {'neoclide/coc.nvim', branch = 'release'}
-	
+
+	-- Syntax hightlighting
+	use {'MaxMEllon/vim-jsx-pretty'}
+	use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    }
+
 	if packer_bootstrap then
     	require('packer').sync()
   	end
