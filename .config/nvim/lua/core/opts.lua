@@ -1,8 +1,7 @@
 --------------------------------------------------------------
 --					 lua/core/opts.lua
 --------------------------------------------------------------
-local opt = vim.opt
-local cmd = vim.api.nvim_command
+local opt = vim.opt local cmd = vim.api.nvim_command
 
 --> Context 
 opt.colorcolumn = '80'		-- str:  Show col. for max line length
@@ -23,9 +22,9 @@ opt.fileencoding = "utf8"	-- str: File endcoding to use
 opt.ff = "unix"
 
 --> Theme
-opt.syntax = "ON"			-- str:  Allow syntax highlighting
-opt.termguicolors = true	-- bool: If terminal supports UI colors
-cmd('colorscheme gruvbox')	-- Sets current theme
+opt.syntax = "ON"					-- str:  Allow syntax highlighting
+opt.termguicolors = true			-- bool: If terminal supports UI colors
+cmd('colorscheme tokyonight-night')	-- Sets current theme
 
 --> Search
 opt.ignorecase = true 		-- bool: Ingnore case-sensitive search

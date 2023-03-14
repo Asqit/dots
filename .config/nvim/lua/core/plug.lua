@@ -19,6 +19,12 @@ return require("packer").startup(function(use)
 	-- Manage packer itself
 	use 'wbthomason/packer.nvim'
 
+	-- Tokyo night color theme 
+	use 'folke/tokyonight.nvim'
+
+	-- Bufferline (file tabs)
+	use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+
 	-- File tree
 	use {
 		'nvim-tree/nvim-tree.lua',
@@ -35,9 +41,6 @@ return require("packer").startup(function(use)
 			 opt = true
 		 }
 	 }
-
-	-- Gruvbox is a retro lookin' theme
-	use { "ellisonleao/gruvbox.nvim" }
 
 	-- LSP
 	use {"neovim/nvim-lspconfig"}
