@@ -19,9 +19,8 @@ return require("packer").startup(function(use)
 	-- Manage packer itself
 	use 'wbthomason/packer.nvim'
 
-	-- Tokyo night color theme 
-	use 'folke/tokyonight.nvim'
-
+	-- Color theme 
+	use { "ellisonleao/gruvbox.nvim" }
 	-- Bufferline (file tabs)
 	use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 

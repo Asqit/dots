@@ -19,12 +19,12 @@ opt.writebackup = false
 --> Filetypes
 opt.encoding = "utf8"		-- str: String encoding to use (ASCII, UTF-16...)
 opt.fileencoding = "utf8"	-- str: File endcoding to use
-opt.ff = "unix"
+opt.ff = "unix"				-- prefre LF instead of CLRF
 
 --> Theme
-opt.syntax = "ON"					-- str:  Allow syntax highlighting
-opt.termguicolors = true			-- bool: If terminal supports UI colors
-cmd('colorscheme tokyonight-night')	-- Sets current theme
+opt.syntax = "ON"			-- str:  Allow syntax highlighting
+opt.termguicolors = true	-- bool: If terminal supports UI colors
+cmd('colorscheme gruvbox')	-- Sets current theme
 
 --> Search
 opt.ignorecase = true 		-- bool: Ingnore case-sensitive search
