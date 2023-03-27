@@ -20,7 +20,9 @@ return require("packer").startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	-- Color theme 
-	use { "ellisonleao/gruvbox.nvim" }
+	use "ellisonleao/gruvbox.nvim"
+	use { "catppuccin/nvim", as = "catppuccin" }
+
 	-- Bufferline (file tabs)
 	use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 

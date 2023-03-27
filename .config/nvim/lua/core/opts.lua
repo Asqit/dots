@@ -22,9 +22,9 @@ opt.fileencoding = "utf8"	-- str: File endcoding to use
 opt.ff = "unix"				-- prefre LF instead of CLRF
 
 --> Theme
-opt.syntax = "ON"			-- str:  Allow syntax highlighting
-opt.termguicolors = true	-- bool: If terminal supports UI colors
-cmd('colorscheme gruvbox')	-- Sets current theme
+opt.syntax = "ON"					-- str:  Allow syntax highlighting
+opt.termguicolors = true			-- bool: If terminal supports UI colors
+vim.cmd.colorscheme "catppuccin"	-- str: sets a current theme
 
 --> Search
 opt.ignorecase = true 		-- bool: Ingnore case-sensitive search
