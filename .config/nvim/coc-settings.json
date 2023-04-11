@@ -10,5 +10,17 @@
     "typescriptreact",
     "json",
     "html"
+  ],
+  "coc.dependecies": [
+    "coc-json",
+    "coc-tsserver",
+    "coc-css",
+    "coc-html",
+    "coc-prettier",
+    "coc-tslint-plugin",
+    "coc-yaml",
+    "coc-prisma",
+    "coc-sh",
+    "@yaegassy/coc-tailwindcss3"
   ]
 }
