@@ -19,6 +19,13 @@ return require("packer").startup(function(use)
 	-- Manage packer itself
 	use 'wbthomason/packer.nvim'
 
+	-- Color theme 
+	use "ellisonleao/gruvbox.nvim"
+	use { "catppuccin/nvim", as = "catppuccin" }
+
+	-- Bufferline (file tabs)
+	use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+
 	-- File tree
 	use {
 		'nvim-tree/nvim-tree.lua',
@@ -26,7 +33,6 @@ return require("packer").startup(function(use)
 			'nvim-tree/nvim-web-devicons', -- optional, for file icons
 		},
 	}
-
 
 	-- Nice looking status bar
 	use {
@@ -37,15 +43,8 @@ return require("packer").startup(function(use)
 		 }
 	 }
 
-	-- Gruvbox is a retro lookin' theme
-	use { "ellisonleao/gruvbox.nvim" }
-
-	-- Package manager (LSP, Linters...)
-	use {
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
-	}
+	-- LSP
+	use {"neovim/nvim-lspconfig"}
 
 	-- Fuzzy finder
 	use {
@@ -56,7 +55,17 @@ return require("packer").startup(function(use)
 
 	-- Code completion
 	use {'neoclide/coc.nvim', branch = 'release'}
-	
+
+	-- Syntax hightlighting
+	use {'MaxMEllon/vim-jsx-pretty'}
+	use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    }
+
 	if packer_bootstrap then
     	require('packer').sync()
   	end
