@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install distro optimized software
-packages='neovim micro nodejs git zsh chsh htop curl wget'
+packages='neovim nodejs git zsh chsh htop curl wget yarnpkg'
 if [ -x "$(command -v apk)" ];			then sudo apk add --no-cache $packages
 elif [ -x "$(command -v apt-get)" ];	then sudo apt-get install $packages
 elif [ -x "$(command -v dnf)" ];		then sudo dnf install $packages
