@@ -10,8 +10,14 @@
 -- 't'			Term. mode
 -- 'x'			Visual block mode
 
-local opts = { silent = true, noremap = true };
+
+-- Setting custom mapleader (Custom keybindings)
+vim.g.mapleader = ','
+vim.g.localleader = '\\'
+
+-- keymap.set(mode, key sequence, command, options)
 local map = vim.api.nvim_set_keymap
+local opts = { silent = true, noremap = true };
 
 -- Execute custom key bindings after ";"
 -- <leader>+key
@@ -23,6 +29,7 @@ map("n", "<C-h>", "<C-w>h", opts)		-- Up
 map("n", "<C-j", "<C-w>j", opts)		-- Down
 map("n", "<C-h>", "<C-w>h", opts)		-- Left
 map("n", "<C-l>", "<C-w>l", opts)		-- Right
+
 
 -- Resize with arrows (ctrl + key)
 map("n", "<C-Up>", ":resize -2<CR>", opts)				
