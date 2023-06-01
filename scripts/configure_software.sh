@@ -2,7 +2,8 @@
 
 echo changing shell, prepare for password prompt
 
-if [ $SHELL != "/usr/bin/zsh" ] then 
+if [[ $SHELL -ne "/usr/bin/zsh" ]] 
+then 
 	chsh -s $(which zsh)
 fi
 
