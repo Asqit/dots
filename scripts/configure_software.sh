@@ -1,6 +1,4 @@
-#!/bin/bash
-
-echo changing shell, prepare for password prompt
+#!/usr/bin/bash
 
 if [[ $SHELL -ne "/usr/bin/zsh" ]] 
 then 

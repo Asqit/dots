@@ -1,23 +1,25 @@
-#!/bin/bash
+#!/usr/bin/bash
+
+# Move up
+cd ..
 
 # Move fonts 
-cp -r .fonts ~/
+cp -rfv .fonts/ ~/
 
 # Move zsh configuration
-rm ~/.zshrc 
-cp ../.zshrc ~/
+ cp -fv ../.zshrc ~/
 
 # Move all .config files
-cd ../.config
-cp * ~/.config
+cd ./.config
+cp * ~/.config/
 
 # Move other .files
 cd ..
-cp .nanorc ~/
+cp -fv .nanorc ~/
 
 # Move theme files
-mv .themes ~/
-cp .icons ~/
+cp -r .themes ~/
+cp -r .icons ~/
 
 tar -xf ~/.themes/*.tar.gz
 tar -xf ~/.icons/*.tar.gz
