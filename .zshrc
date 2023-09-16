@@ -25,15 +25,11 @@ alias gaA="git add -A"
 alias gcm="git commit -m"
 alias gc="git commit"
 alias gf="git fetch"
-
 alias cls="clear && ls -la"
-
 alias vi="neovim"
 alias vim="neovim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Styling my auto-suggestions (Bold green)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#15db68,bold"
@@ -43,3 +39,5 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Disable suggestions for large files
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
+export PATH

@@ -7,7 +7,7 @@ cd ..
 cp -rfv .fonts/ ~/
 
 # Move zsh configuration
- cp -fv ../.zshrc ~/
+cp -fv ../.zshrc ~/
 
 # Move all .config files
 cd ./.config

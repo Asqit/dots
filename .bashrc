@@ -1,4 +1,4 @@
-# .bashrc
+# Andrew Tuček's .bashrc
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -10,7 +10,13 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
-export PATH
+
+# Append deno to user's $PATH if installed
+DENO_INSTALL="$HOME/.deno"
+if [ -d "$DENO_INSTALL" ]; then
+	PATH="$DENO_INSTALL/bin:$PATH"
+fi
+
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
@@ -24,15 +30,13 @@ if [ -d ~/.bashrc.d ]; then
 	done
 fi
 
-unset rc
-source /home/andrew/.tmc-autocomplete.sh || true
-source /home/andrew/.tmc-autocomplete.sh || true
-
-# [bold(username@location  time),newline,return,>>]
+# Custom syntax for $PS1 variable (command prompt)
 PS1="┌[\e[1m\u@\w  \A\e[0m]\n\r└» "
 
-# Bash documentation
-# https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Controlling-the-Prompt
+# Source rust support if exists
+CARGO_PATH="$HOME/.cargo/env"
+if [ -d "$CARGO_PATH" ]; then
+	. $CARGO_PATH
+fi
 
-
-alias deno=/home/andrew/.deno/bin/deno
+export PATH
