@@ -5,8 +5,10 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+
 # Custom command prompt ($PS1)
 PS1="┌[\e[1m\u@\w  \A\e[0m]\n\r└» "
+
 
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then
@@ -20,9 +22,9 @@ fi
 
 # Use nano for ssh session and neovim for local session
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nano'
+  EDITOR='nano'
 else
-  export EDITOR='nvim'
+  EDITOR='nvim'
 fi
 
 # ----------------------------------------------------------------------- Update $PATH
@@ -32,6 +34,7 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
+
 
 # Add deno to $PATH if exists
 DENO_INSTALL="$HOME/.deno"
@@ -49,11 +52,19 @@ if [ -d "$BUN_INSTALL" ]; then
 	# [ -s "/home/andrew/.bun/_bun" ] && source "/home/andrew/.bun/_bun"
 fi
 
+
 # Source rust support if exists
 CARGO_PATH="$HOME/.cargo/env"
 if [ -d "$CARGO_PATH" ]; then
 	. "$CARGO_PATH"
+
+
+# Adding Golang (as archive)
+GOLANG_PATH="/opt/go/bin"
+if [ -d "$GOLANG_PATH" ]; then
+	PATH="$GOLANG_PATH:$PATH"
 fi
+
 
 # ----------------------------------------------------------------------- Aliases
 
@@ -73,3 +84,4 @@ alias gp="git pull"
 
 # ---------------------------------------------------------------------- Exports
 export PATH
+export EDITOR

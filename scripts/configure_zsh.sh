@@ -1,4 +1,6 @@
-#!/usr/bin/bash
+# Name: configure_zsh.sh
+# Author: Ondřej Tuček 16.9.2023
+# script that will configure ZSH to my liking if installed
 
 function install_omz {
 	# clone oh-my-zsh

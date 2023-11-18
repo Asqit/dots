@@ -1,6 +1,5 @@
-# Dots 
-_my linux 🐧 configuration files_
+# DOTS...
 
-This repo contains all my useful home configs. 
+![cover](./repo/cover.png)
 
-**Please do not copy** these settings, unless you know what are you doing.
+A repository for my linux environment
